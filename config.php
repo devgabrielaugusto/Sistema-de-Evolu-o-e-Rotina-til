@@ -2,7 +2,7 @@
 // config.php
 // Lê as credenciais do ambiente (Vercel) ou usa um valor fallback
 $supabase_url = getenv('SUPABASE_URL') ?: 'SUA_SUPABASE_URL_AQUI';
-$supabase_key = getenv('SUPABASE_KEY') ?: 'SUA_SUPABASE_KEY_AQUI';
+$supabase_key = getenv('SUPABASE_KEY') ?: getenv('SUPABASE_ANON_KEY') ?: getenv('SUPABASE_SERVICE_ROLE_KEY') ?: 'SUA_SUPABASE_KEY_AQUI';
 
 define('SUPABASE_URL', $supabase_url);
 define('SUPABASE_KEY', $supabase_key);
